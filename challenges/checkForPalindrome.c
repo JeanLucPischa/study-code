@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <ctype.h>
 
 #define MAX_SIZE 100
 
@@ -37,10 +38,7 @@ bool is_palindrome(const char *str){
     char l = *left;
     char r = *right;
 
-    if (l >= 'A' && l <= 'Z') l += 32;
-    if (r >= 'A' && r <= 'Z') r += 32;
-
-    if (l != r) return false;
+    if (tolower(l) != tolower(r)) return false;
 
     right--;
     left++;
