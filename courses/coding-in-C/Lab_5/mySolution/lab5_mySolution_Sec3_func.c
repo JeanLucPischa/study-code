@@ -29,7 +29,7 @@ void setParticleArray(int *particle_arr, int size, const int *init_pos, int size
 
   for(int i=0; i<((int)(size_init_pos_arr/2)); i++){        //initialize collision memory with value out of range
     collision_memory[i] = size+1;
-}
+  }
 }
 
 void displayParticles(int *particle_arr, int size, int counter, int *collision_memory){
@@ -102,7 +102,9 @@ void simulateRun(int times, int *particle_arr, const int *init_pos, int *temp_ar
 
   for(int i=0; i<times; i++){
     displayParticles(particle_arr, size, i, collision_memory);
+
     collision_memory[0] = size+1;                   //reset collision memory
+    
     simulateParticles(particle_arr, temp_arr, size, collision_memory);
   }
 }
