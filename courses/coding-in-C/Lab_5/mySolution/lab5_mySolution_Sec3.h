@@ -15,7 +15,7 @@
 *             size_init_pos_arr   size of the array with the initial positions of the particles
 *             collision_memory    array to memorize where collisions have happend
 */
-void setParticleArray(int *particle_arr, int size, const int *init_pos, int size_init_pos_arr, int *collision_memory);
+void setParticleArray(int *particle_arr, const int size, const int *init_pos, const int size_init_pos_arr);
 
 /*
 * @brief  display the current state of the particle-array
@@ -23,9 +23,9 @@ void setParticleArray(int *particle_arr, int size, const int *init_pos, int size
 * @param[in]  particle_arr  given array with the particles
 *             size          size of the particle-array
 *             counter       current time-step
-*             collision_memory    array to memorize where collisions have happend
+*             collision_index     index of detected collision
 */
-void displayParticles(int *particle_arr, int size, int counter, int *collision_memory);
+void displayParticles(const int *particle_arr, const int size, int timestep_counter, const int collision_index);
 
 /*
 * @brief  simulate the movement of the particles
@@ -33,9 +33,9 @@ void displayParticles(int *particle_arr, int size, int counter, int *collision_m
 * @param[in]  particle_arr  given array with the particles
 *             temp_arr      temporary array to store momentary positions of particles
 *             size          size of the particle-array
-*             collision_memory    array to memorize where collisions have happend
+*             ptr_collision_index     pointer to value of index of detected collision
 */
-void simulateParticles(int *particle_arr, int *temp_arr, int size, int *collision_memory);
+void simulateParticles(int *particle_arr, int *temp_arr, const int size, int *ptr_collision_index);
 
 /*
 * @brief  simulate the movement of the particles for a given amount of steps
@@ -47,6 +47,6 @@ void simulateParticles(int *particle_arr, int *temp_arr, int size, int *collisio
 *             size          size of the particle-array
 *             size_init_pos_arr   size of the array with the initial positions of the particles
 */
-void simulateRun(int times, int *particle_arr, const int *init_pos, int *temp_arr, int size, int size_init_pos_arr);
+void simulateRun(int times, int *particle_arr, const int *init_pos, int *temp_arr, const int size, const int size_init_pos_arr);
 
 #endif

@@ -15,28 +15,27 @@
 #define PARTICLE 1
 #define EMPTY_SPACE 0
 
-void setParticleArray(int *particle_arr, int size, const int *init_pos, int size_init_pos_arr, int *collision_memory){
+#define NO_COLLISION -1                   //value out of range for collision detection
+
+void setParticleArray(int *particle_arr, const int size, const int *init_pos, const int size_init_pos_arr){
   int init_index = 0;
 
   for(int i=0; i<size; i++){
     particle_arr[i] = EMPTY_SPACE;
-
-    if(init_index<size_init_pos_arr && init_pos[init_index]==i){  //check all content of init_pos[] and place ones accordingly
-      particle_arr[i] = PARTICLE;
-      init_index++;
+    
+    for(int j=0; i<size_init_pos_arr; j++){   //check if position in particle-array is supposed to have particle
+      if(init_pos[j]==i){
+        particle_arr[i] = PARTICLE;
+      }
     }
-  }
-
-  for(int i=0; i<((int)(size_init_pos_arr/2)); i++){        //initialize collision memory with value out of range
-    collision_memory[i] = size+1;
   }
 }
 
-void displayParticles(int *particle_arr, int size, int counter, int *collision_memory){
-  printf("Time %d: ", counter);
+void displayParticles(const int *particle_arr, const int size, int timestep_counter, const int collision_index){
+  printf("Time %d: ", timestep_counter);
 
   for(int i=0; i<size; i++){
-    if(i == collision_memory[0]){                           //print index where collision happend in red color
+    if(i == collision_index){                               //print index where collision happend in red color
       printf(COLLISION_MARKER "%d " COLOR_RESET, particle_arr[i]);
     }
     else{
@@ -52,7 +51,7 @@ void displayParticles(int *particle_arr, int size, int counter, int *collision_m
   printf("\n");
 }
 
-void simulateParticles(int *particle_arr, int *temp_arr, int size, int *collision_memory){
+void simulateParticles(int *particle_arr, int *temp_arr, const int size, int *ptr_collision_index){
   //initialize temporary array
   for(int i=0; i<size; i++){
     temp_arr[i] = 0;
@@ -85,7 +84,7 @@ void simulateParticles(int *particle_arr, int *temp_arr, int size, int *collisio
     if(temp_arr[i]>PARTICLE){ //check if there is more than one particle on one spot
       temp_arr[i] = 0;
       printf("Collision on index %d\n", i);
-      collision_memory[0] = i;
+      *ptr_collision_index = i;
     }
   }
 
@@ -95,17 +94,16 @@ void simulateParticles(int *particle_arr, int *temp_arr, int size, int *collisio
   }
 }
 
-void simulateRun(int times, int *particle_arr, const int *init_pos, int *temp_arr, int size, int size_init_pos_arr){
-  int max_collisions = (int)(size_init_pos_arr/2);  //max amount of collisions possible is particles / 2 (floored); e.g. 7 particles -> max 3 collisions possible
-  int collision_memory[max_collisions];    
+void simulateRun(int times, int *particle_arr, const int *init_pos, int *temp_arr, const int size, const int size_init_pos_arr){
+ int collision_index = NO_COLLISION;
 
-  setParticleArray(particle_arr, size, init_pos, size_init_pos_arr, collision_memory);
+  setParticleArray(particle_arr, size, init_pos, size_init_pos_arr);
 
   for(int i=0; i<times; i++){
-    displayParticles(particle_arr, size, i, collision_memory);
+    displayParticles(particle_arr, size, i, collision_index);
 
-    collision_memory[0] = size+1;                   //reset collision memory
+    collision_index = NO_COLLISION;   //reset collision memory
     
-    simulateParticles(particle_arr, temp_arr, size, collision_memory);
+    simulateParticles(particle_arr, temp_arr, size, &collision_index);
   }
 }
