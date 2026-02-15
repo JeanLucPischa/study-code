@@ -13,6 +13,7 @@
 *             size          size of the given array
 *             init_pos      given array with initial positions of particles
 *             size_init_pos_arr   size of the array with the initial positions of the particles
+*             collision_memory    array to memorize where collisions have happend
 */
 void setParticleArray(int *particle_arr, int size, const int *init_pos, int size_init_pos_arr, int *collision_memory);
 
@@ -22,6 +23,7 @@ void setParticleArray(int *particle_arr, int size, const int *init_pos, int size
 * @param[in]  particle_arr  given array with the particles
 *             size          size of the particle-array
 *             counter       current time-step
+*             collision_memory    array to memorize where collisions have happend
 */
 void displayParticles(int *particle_arr, int size, int counter, int *collision_memory);
 
@@ -31,6 +33,7 @@ void displayParticles(int *particle_arr, int size, int counter, int *collision_m
 * @param[in]  particle_arr  given array with the particles
 *             temp_arr      temporary array to store momentary positions of particles
 *             size          size of the particle-array
+*             collision_memory    array to memorize where collisions have happend
 */
 void simulateParticles(int *particle_arr, int *temp_arr, int size, int *collision_memory);
 
