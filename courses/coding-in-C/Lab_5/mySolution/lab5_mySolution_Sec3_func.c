@@ -102,7 +102,7 @@ void simulateRun(int times, int *particle_arr, const int *init_pos, int *temp_ar
   for(int i=0; i<times; i++){
     displayParticles(particle_arr, size, i, collision_index);
 
-    collision_index = NO_COLLISION;   //reset collision memory
+    collision_index = NO_COLLISION; //reset collision memory
     
     simulateParticles(particle_arr, temp_arr, size, &collision_index);
   }
