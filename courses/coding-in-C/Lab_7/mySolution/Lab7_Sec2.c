@@ -36,6 +36,7 @@ int main(){
 }
 
 Node *create_node(double value){
+
   Node this_node;
   Node *ptr_this_node = &this_node;
   ptr_this_node->value = value;
