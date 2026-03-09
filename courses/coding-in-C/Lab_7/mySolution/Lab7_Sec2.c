@@ -3,6 +3,7 @@
  *  Description:  Understand how linked lists are implemented in C
  */
 
+ /*
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -120,3 +121,5 @@ node *create_node(double value){
 
   return new_node;
 }
+
+*/
