@@ -2,7 +2,7 @@
 
 This lab focuses on getting started with C++ especially for programmers familiar with C.
 
-All the following sections of this and the other labs in this directory follow the following level of dificulty:
+All the following sections of this lab are based on the following levels of dificulty:
 
 🟢 __Simple__: A simple coding task that usually guides you step by step through the process and focuses on learning the basics. It should not take more than 15min to finish it. 
 
@@ -12,6 +12,10 @@ All the following sections of this and the other labs in this directory follow t
 
 ## 🟢 Section I: Get running
 The goal of this section is to run your first C++ project.
+
+You will practice the following concepts:
+* C++ compiler (g++) usage
+* C++ file extensions
 
 ### Task Description
 
@@ -30,6 +34,16 @@ g++ helloWorld.cpp -o helloWorld
 ```shell
 ./helloWorld
 ```
+* Create another __Hello World__ example and save it in a .c file
+* Check if you can compile it with the C++ compiler as before
+* Create a C++ header file (.hpp)
+* Add a function prototype to the header called __void printFromHeader()__
+* The logic of this function should be defined in __helloWorld.cpp__ 
+* __printFromHeader()__ should output the text:
+```shell
+"Hello from .hpp"
+```
+* Call the function in __helloWorld.cpp__ and run it to ensure it works
 
 ### Hints
 * Feel free to repeat this process on your local machine to ensure a correct setup there too
