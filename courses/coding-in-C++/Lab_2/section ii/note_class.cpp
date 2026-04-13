@@ -25,7 +25,7 @@ class Note
         };
         void display()
         {
-            std::cout << *text << std::endl;
+            std::cout << std::endl << *text << std::endl;
         };
 };
 
@@ -37,5 +37,7 @@ int main()
     Note note2(note1);
     note2.display();
 
+    Note note3("This is also a note with very intellectual value");
+    note3.display();
     return 0;
 }
