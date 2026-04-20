@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Seite-1" id="xAm9b48hCpRYvPyd0oC4">
+    <mxGraphModel dx="968" dy="629" grid="1" gridSize="10" guides="0" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="854" pageHeight="1136" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hKGHGCollc5IdEntts_U-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="Movie" vertex="1">
+          <mxGeometry height="162" width="270" x="30" y="226" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-3" parent="hKGHGCollc5IdEntts_U-1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- title: String" vertex="1">
+          <mxGeometry height="25" width="270" y="29" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-4" parent="hKGHGCollc5IdEntts_U-1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- duration: int" vertex="1">
+          <mxGeometry height="25" width="270" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-5" parent="hKGHGCollc5IdEntts_U-1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- base_price: double" vertex="1">
+          <mxGeometry height="25" width="270" y="79" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-40" parent="hKGHGCollc5IdEntts_U-1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- / price_with_tax: double" vertex="1">
+          <mxGeometry height="25" width="270" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-27" parent="hKGHGCollc5IdEntts_U-1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="8" width="270" y="129" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-28" parent="hKGHGCollc5IdEntts_U-1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ calc_price(in base_price, out price_with_tax)" vertex="1">
+          <mxGeometry height="25" width="270" y="137" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-6" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="Customer" vertex="1">
+          <mxGeometry height="137" width="190" x="340" y="226" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-7" parent="hKGHGCollc5IdEntts_U-6" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- name: String" vertex="1">
+          <mxGeometry height="25" width="190" y="29" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-8" parent="hKGHGCollc5IdEntts_U-6" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- customer_id: String" vertex="1">
+          <mxGeometry height="25" width="190" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-33" parent="hKGHGCollc5IdEntts_U-6" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- is_vip: bool" vertex="1">
+          <mxGeometry height="25" width="190" y="79" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-34" parent="hKGHGCollc5IdEntts_U-6" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="8" width="190" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-35" parent="hKGHGCollc5IdEntts_U-6" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ is_vip(return is_vip): {query}" vertex="1">
+          <mxGeometry height="25" width="190" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-10" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="Ticket" vertex="1">
+          <mxGeometry height="162" width="160" x="570" y="226" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-11" parent="hKGHGCollc5IdEntts_U-10" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- movie_price: double" vertex="1">
+          <mxGeometry height="25" width="160" y="29" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-29" parent="hKGHGCollc5IdEntts_U-10" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- ticket_used: bool" vertex="1">
+          <mxGeometry height="25" width="160" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-36" parent="hKGHGCollc5IdEntts_U-10" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="&lt;u&gt;+ amount_tickets: int&lt;/u&gt;" vertex="1">
+          <mxGeometry height="25" width="160" y="79" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-31" parent="hKGHGCollc5IdEntts_U-10" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-32" parent="hKGHGCollc5IdEntts_U-10" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ validate_ticket()" vertex="1">
+          <mxGeometry height="25" width="160" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="hKGHGCollc5IdEntts_U-38" parent="hKGHGCollc5IdEntts_U-10" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="+ calc_ticket_price()" vertex="1">
+          <mxGeometry height="25" width="160" y="137" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
