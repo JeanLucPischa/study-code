@@ -1,0 +1,16 @@
+Task Part 1:
+    - No modularization into source- and header-files
+    - Line 4: usage of "using"
+    - Line 8, 11, 14, 52-56: not using "std::"
+    - Line 8-12: should not be publicly accessable
+    - Line 11: usage of pointer is unreasoned
+    - Line 15-17: missing "this->"
+    - Line 15-20: should be initialized via member-initialization-list
+    - Line 14: missing deconstructor
+    - Line 14: missing validation of parameters
+    - Line 40: missing usage of "const" for methods not changing variables
+    - Line 44: missing "{}" in if-cases
+    - Line 65: faulty changing of price not using the supposed function
+    - Line 60-66: magic-numbers
+    
+    
