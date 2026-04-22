@@ -1,6 +1,6 @@
 # Lab 2: From C to C++
 
-This lab focuses on getting started with C++ especially for programmers familiar with C.
+This lab focuses on the basics of object-oriented programming in C++ including UML class and object diagrams.
 
 All the following sections of this lab are based on the following levels of dificulty:
 
