@@ -51,12 +51,28 @@ void printFrame(T frame)
     std::cout << frame[N - 1] << "]" << '\n';
 }
 
-template <typename T>
+/* Commented out below is the solution of the min-template before task5 is implemented */
+/* template <typename T>
 T min(T frame[], int size)
 {
 
     T minValue = frame[0];
     for (int i = 1; i < size; i++)
+    {
+        if (frame[i] < minValue)
+        {
+            minValue = frame[i];
+        }
+    }
+    return minValue;
+} */
+
+template <int N, typename T>
+T min(T frame[])
+{
+
+    T minValue = frame[0];
+    for (int i = 1; i < N; i++)
     {
         if (frame[i] < minValue)
         {
