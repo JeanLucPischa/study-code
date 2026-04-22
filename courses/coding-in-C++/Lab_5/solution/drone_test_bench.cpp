@@ -98,5 +98,25 @@ int main()
     std::cout << "Double dataset\n";
     printMetricsReport(doubleData);
 
+    // Task 9b
+    // Fixed-size sensor frames
+    int temperatureFrame[5] = {22, 24, 23, 25, 21};
+    std::vector<int> temperatureData = convertToVector(temperatureFrame);
+
+    std::cout << "Temperature Frame Analysis\n";
+    printMetricsReport(temperatureData);
+    std::cout << '\n';
+
+    // Task 9c
+
+    std::vector<bool> motorStatus = {true, true, false, true, false};
+
+    double avg = computeAverage(motorStatus);
+
+    bool majority = (avg > 0.5);
+
+    std::cout << "Motor was active for most of the test run: "
+              << majority << '\n';
+
     return 0;
 }

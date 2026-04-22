@@ -151,4 +151,35 @@ void printMetricsReport(const std::vector<T> &data)
     std::cout << "Max: " << computeMax(data) << '\n';
     std::cout << "Average: " << computeAverage(data) << '\n';
 }
+
+template <typename T, int N>
+std::vector<T> convertToVector(T (&frame)[N])
+{
+    std::vector<T> result;
+
+    for (int i = 0; i < N; i++)
+    {
+        result.push_back(frame[i]);
+    }
+
+    return result;
+}
+
+template <>
+double computeAverage<bool>(const std::vector<bool> &data)
+{
+    int trueCount = 0;
+
+    for (std::size_t i = 0; i < data.size(); i++)
+    {
+        if (data[i] == true)
+        {
+            trueCount = trueCount + 1;
+        }
+    }
+
+    // Anteil der true-Werte
+    return static_cast<double>(trueCount) / data.size();
+}
+
 #endif
