@@ -6,8 +6,9 @@
 #include <cstdint>
 
 constexpr std::uint8_t MAX_TEMP = 100;  //in celsius
-constexpr std::uint8_t MIN_TEMP = -20;
-constexpr std::int8_t MAX_SUGAR = 10;   //in grams
+constexpr std::uint8_t MIN_TEMP = 0;
+constexpr std::uint8_t MAX_SUGAR = 10;   //in grams
+constexpr std::uint8_t MIN_SUGAR = 0;
 
 class DrinkBuilder
 {

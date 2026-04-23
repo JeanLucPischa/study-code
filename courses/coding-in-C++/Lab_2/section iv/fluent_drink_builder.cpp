@@ -38,27 +38,34 @@ void DrinkBuilder::print()
 
     //printing out properties of the drink
     std::cout << "The current configurated drink \"" << name << "\" has following properties:" << std::endl;
-    std::cout << " - " << sugar << "g of sugar" << std::endl;
-    std::cout << " - " << temperatur << " Degrees Celsius" << std::endl;
+    std::cout << " - " << static_cast<int>(sugar) << "g of sugar" << std::endl;
+    std::cout << " - " << static_cast<int>(temperatur) << " Degrees Celsius" << std::endl;
     std::cout << " - with" << status_milk << "milk" << std::endl;
 }
 
 const bool DrinkBuilder::isValid()
 {
-    std::int8_t flag = 0;   //flag for checking if invalid parameter has been found
+    bool flag = false;   //flag for checking if invalid parameter has been found
 
     if(temperatur >= MAX_TEMP)
     {
-        std::cout << "Drink configuration invalid: temperatur too high (maximum: " << MAX_TEMP << ")." << std::endl;
-        flag = 1;
+        std::cout << "Drink configuration invalid: temperatur too high (maximum: " << static_cast<int>(MAX_TEMP) << ")." << std::endl;
+        flag = true;
     }
     else if(temperatur <= MIN_TEMP)
     {
-        std::cout << "Drink configuration invalid: temperatur too low (minimum: " << MIN_TEMP << ")." << std::endl;
-        flag = 1;
+        std::cout << "Drink configuration invalid: temperatur too low (minimum: " << static_cast<int>(MIN_TEMP) << ")." << std::endl;
+        flag = true;
     }
     if(sugar >= MAX_SUGAR)
     {
-        std::cout << "Drink configuration invalid: sugar amount too high ()."
+        std::cout << "Drink configuration invalid: sugar amount too high (maximum: " << static_cast<int>(MAX_SUGAR) << ")." << std::endl;
+        flag = true;
     }
+    else if(sugar <= MIN_SUGAR)
+    {
+        std::cout << "Drink configuration invalid: sugar amount too low (minimum: " << static_cast<int>(MIN_SUGAR) << ")." << std::endl;
+        flag = true;
+    }
+    return flag;
 }
