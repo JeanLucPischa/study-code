@@ -46,7 +46,7 @@ void readStudentData(std::string &name, std::uint16_t &homework, std::uint16_t &
 
 void calculateGrade(const std::uint16_t homework, const std::uint16_t midterm, const std::uint16_t final_exam, std::uint16_t &final_grade, std::string &letter_grade)
 {
-   final_grade = (0.4*homework)+(0.25*midterm)+(0.35*final_exam);
+   final_grade = (HOMEWORK_FACTOR*homework)+(MIDTERM_FACTOR*midterm)+(FINAL_EXAM_FACTOR*final_exam);
    if(final_grade >= 90)
    {
         letter_grade = 'A';

@@ -11,6 +11,9 @@
 #define PASS "PASS"
 #define CONDITIONAL PASS "CONDITIONAL PASS"
 #define FAIL "FAIL"
+#define HOMEWORK_FACTOR 0.4
+#define MIDTERM_FACTOR 0.25
+#define FINAL_EXAM_FACTOR 0.35
 
 /**
  * @brief Reads singular inputs of values / scores
