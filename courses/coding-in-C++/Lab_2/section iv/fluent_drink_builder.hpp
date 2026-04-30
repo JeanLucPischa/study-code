@@ -5,6 +5,11 @@
 #include <string>
 #include <cstdint>
 
+const std::string DEFAULT_NAME = "Water";
+constexpr std::uint8_t DEFAULT_SUGAR = 0;
+constexpr std::uint8_t DEFAULT_TEMP = 15;
+constexpr std::uint8_t DEFAULT_MILK = false;
+
 constexpr std::uint8_t MAX_TEMP = 100;  //in celsius
 constexpr std::uint8_t MIN_TEMP = 0;
 constexpr std::uint8_t MAX_SUGAR = 10;   //in grams
@@ -25,6 +30,7 @@ class DrinkBuilder
         DrinkBuilder& setWithMilk(bool with_milk);
         void print();
         const bool isValid();
+        DrinkBuilder() : name(DEFAULT_NAME), sugar(DEFAULT_SUGAR), temperatur(DEFAULT_TEMP), with_milk(DEFAULT_MILK) {};
 };
 
 #endif
