@@ -16,6 +16,7 @@ class Note
         {
             text = new std::string;
             *text = *note.text;
+            std::cout << "copy constructor triggered" << std::endl;
         }
         ~Note()
         {
@@ -39,5 +40,8 @@ int main()
 
     Note note3("This is also a note with very intellectual value");
     note3.display();
+
+    Note note4 = note2;
+    note4.display();
     return 0;
 }
