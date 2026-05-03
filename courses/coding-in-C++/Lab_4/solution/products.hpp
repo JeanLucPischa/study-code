@@ -57,42 +57,60 @@ public:
      *
      * @return Product ID
      */
-    int get_product_id() const;
+    int get_product_id() const
+    {
+        return product_id;
+    }
 
     /**
      * @brief Returns the product name.
      *
      * @return Product name
      */
-    std::string get_name() const;
+    std::string get_name() const
+    {
+        return name;
+    }
 
     /**
      * @brief Returns the measured product weight.
      *
      * @return Product weight
      */
-    double get_weight() const;
+    double get_weight() const
+    {
+        return weight;
+    }
 
     /**
      * @brief Returns the measured product temperature.
      *
      * @return Product temperature
      */
-    double get_temperature() const;
+    double get_temperature() const
+    {
+        return temperature;
+    }
 
     /**
      * @brief Returns whether a visual defect was detected.
      *
      * @return True if a visual defect exists, otherwise false
      */
-    bool get_has_visual_defect() const;
+    bool get_has_visual_defect() const
+    {
+        return has_visual_defect;
+    }
 
     /**
      * @brief Returns whether the product provides a voltage value.
      *
      * @return True if voltage is available, otherwise false
      */
-    virtual bool has_voltage_value() const;
+    virtual bool has_voltage_value() const
+    {
+        return false;
+    }
 
     /**
      * @brief Returns the measured voltage.
@@ -101,7 +119,10 @@ public:
      *
      * @return Voltage value
      */
-    virtual double get_voltage() const;
+    virtual double get_voltage() const
+    {
+        return 0.0;
+    }
 
     /**
      * @brief Returns the concrete product type.
@@ -109,20 +130,6 @@ public:
      * @return Product type as string
      */
     virtual std::string get_product_type() const = 0;
-
-    /**
-     * @brief Removes all previous inspection results.
-     */
-    void clear_results();
-
-    /**
-     * @brief Stores one inspection result.
-     *
-     * The result is only stored if the internal result array still has space.
-     *
-     * @param[in] result Inspection result to store
-     */
-    void add_result(const InspectionResult &result);
 
     /**
      * @brief Returns the number of stored inspection results.
@@ -140,6 +147,20 @@ public:
      * @return Inspection result at the given index
      */
     InspectionResult get_inspection_result(int index) const;
+
+    /**
+     * @brief Removes all previous inspection results.
+     */
+    void clear_results();
+
+    /**
+     * @brief Stores one inspection result.
+     *
+     * The result is only stored if the internal result array still has space.
+     *
+     * @param[in] result Inspection result to store
+     */
+    void add_result(const InspectionResult &result);
 
     /**
      * @brief Generates a report for the product.
@@ -168,14 +189,17 @@ public:
      * @param[in] temperature Engine temperature
      * @param[in] visual_defect True if a visual defect exists
      */
-    CombustionEngine(int id, double weight, double temperature, bool visual_defect);
+    CombustionEngine(int id, double weight, double temperature, bool visual_defect) : Product(id, "Combustion Motor", weight, temperature, visual_defect) {}
 
     /**
      * @brief Returns the product type.
      *
      * @return Product type as string
      */
-    std::string get_product_type() const override;
+    std::string get_product_type() const override
+    {
+        return "Combustion Engine";
+    }
 };
 
 /**
@@ -196,29 +220,42 @@ public:
      * @param[in] engine_voltage Engine voltage
      * @param[in] visual_defect True if a visual defect exists
      */
-    ElectricEngine(int id, double weight, double temperature, double engine_voltage,
-                   bool visual_defect);
+    ElectricEngine(int id, double weight, double temperature,
+                   double engine_voltage, bool visual_defect)
+        : Product(id, "Electric Motor", weight, temperature, visual_defect),
+          voltage(engine_voltage)
+    {
+    }
 
     /**
      * @brief Returns whether this product provides a voltage value.
      *
      * @return Always true for electric engines
      */
-    bool has_voltage_value() const override;
+    bool has_voltage_value() const override
+    {
+        return true;
+    }
 
     /**
      * @brief Returns the measured voltage.
      *
      * @return Voltage value
      */
-    double get_voltage() const override;
+    double get_voltage() const override
+    {
+        return voltage;
+    }
 
     /**
      * @brief Returns the product type.
      *
      * @return Product type as string
      */
-    std::string get_product_type() const override;
+    std::string get_product_type() const override
+    {
+        return "Electric Engine";
+    }
 };
 
 #endif
