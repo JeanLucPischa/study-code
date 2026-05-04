@@ -1,0 +1,2 @@
+-   no "virtual" before destructor in base class
+-   
