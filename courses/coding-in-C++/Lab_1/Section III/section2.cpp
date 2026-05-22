@@ -2,9 +2,9 @@
 #include <cstdint>
 #include <limits>
 
-#define MIN_AGE_ADULT 18
-#define MIN_AGE_SENIOR 65
-#define MAX_AGE 120
+constexpr int MIN_AGE_ADULT = 18;
+constexpr int MIN_AGE_SENIOR =  65;
+constexpr int MAX_AGE = 120;
 
 namespace validation
 {
