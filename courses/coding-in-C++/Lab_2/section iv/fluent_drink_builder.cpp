@@ -58,7 +58,7 @@ DrinkBuilder& DrinkBuilder::setWithMilk(bool with_milk)
  */
 void DrinkBuilder::print()
 {
-    //configure string appended to "with" for printing wether drink has milk or not
+    //configure string appended to "with" for printing whether drink has milk or not
     std::string status_milk;
     if(with_milk)
     {
